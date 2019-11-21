@@ -71,7 +71,6 @@ GlobalKeyword = [gG][lL][oO][bB][aA][lL]
 
   /* keywords */
   "function" { return generateTokenSym(TokenSym.FUNCTION) }
-  "main" { return generateTokenSym(TokenSym.MAIN) }
   "end" { return generateTokenSym(TokenSym.END) }
   "if" { return generateTokenSym(TokenSym.IF); }
   "then" { return generateTokenSym(TokenSym.THEN); }
