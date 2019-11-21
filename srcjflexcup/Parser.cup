@@ -1,0 +1,115 @@
+import java_cup.runtime.*;
+
+class Parser;
+
+/* Terminals (tokens returned by the scanner). */
+terminal FUNCTION, MAIN, END, IF, THEN, ELSE, WHILE, DO, FOR, LOCAL, GLOBAL,
+  READ, WRITE, RETURN, NOT, SHARP, ID;
+terminal NIL, INT, BOOL, FLOAT, STRING;
+terminal LPAR, RPAR, BLPAR, BRPAR, SLPAR, SRPAR, COMMA, SEMI, COLON;
+terminal AND, OR, LT, LE, EQ, NE, GT, GE, ARROW, ASSIGN, NOP;
+terminal PLUS, MINUS, TIMES, DIV;
+terminal UMINUS;
+
+terminal Integer  INT_CONST;
+terminal Double   FLOAT_CONST;
+terminal String   STRING_CONST;
+terminal Boolean  TRUE, FALSE;
+
+/* Non Terminals */
+non terminal Program, Global, Functions, Def_fun, Par_decls, Var_decls,
+  Var_init_value, Type, Types, Statements, Stat, Vars, Exprs, Expr;
+
+/* Precendeces */
+precedence left PLUS, MINUS;
+precedence left TIMES, DIV;
+precedence left UMINUS;
+
+/* The grammar */
+Program ::= Global Functions
+;
+
+Global ::= GLOBAL Var_decls END
+  | /* empty */
+;
+
+Functions ::= Def_fun Functions
+  | Def_fun
+;
+
+Def_fun ::= FUNCTION ID LPAR Par_decls RPAR COLON Type Statements END 
+  | FUNCTION ID LPAR RPAR COLON Type Statements END
+;
+
+Par_decls ::= ID COLON Type COMMA Par_decls
+  | ID COLON Type
+;
+
+Var_decls ::= ID COLON Type Var_init_value SEMI Var_decls
+  | ID COLON Type Var_init_value
+;
+
+Var_init_value ::= ASSIGN Expr
+  | /* empty */
+;
+
+Type ::= NIL | INT | BOOL | FLOAT | STRING
+  | BLPAR Type BRPAR
+  | LPAR Types RPAR ARROW Type
+  | LPAR RPAR ARROW Type
+;
+
+Types ::= Type COMMA Types
+  | Type
+;
+
+Statements ::= Stat SEMI Statements
+  | Stat
+;
+
+Stat ::= NOP
+  | WHILE Expr DO Statements END
+  | IF Expr THEN Statements ELSE Statements END
+  | FOR ID ASSIGN Expr COMMA Expr DO Statements END
+  | LOCAL Var_decls SEMI Statements END
+  | ID ASSIGN Expr
+  | Expr SLPAR Expr SRPAR ASSIGN Expr
+  | ID LPAR Exprs RPAR
+  | Vars READ
+  | Exprs WRITE
+  | RETURN Expr
+;
+
+Vars ::= ID COMMA Vars
+  | ID
+;
+
+Exprs ::= Expr COMMA Exprs
+  | Expr
+;
+
+Expr ::= NIL
+  | TRUE
+  | FALSE
+  | INT_CONST
+  | FLOAT_CONST
+  | STRING_CONST
+  | BLPAR BRPAR COLON Type
+  | ID
+  | Expr SLPAR Expr SRPAR
+  | ID LPAR Exprs RPAR
+  | Expr PLUS Expr
+  | Expr MINUS Expr
+  | Expr TIMES Expr
+  | Expr DIV Expr
+  | Expr AND Expr
+  | Expr OR Expr
+  | Expr GT Expr
+  | Expr GE Expr
+  | Expr LT Expr
+  | Expr LE Expr
+  | Expr EQ Expr
+  | MINUS Expr
+  | NOT Expr
+  | SHARP Expr
+;
