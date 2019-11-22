@@ -1,3 +1,5 @@
+package dist;
+
 import java_cup.runtime.*;
 
 class Parser;
@@ -11,7 +13,7 @@ terminal AND, OR, LT, LE, EQ, NE, GT, GE, ARROW, ASSIGN, NOP;
 terminal PLUS, MINUS, TIMES, DIV;
 terminal UMINUS;
 
-terminal Integer  INT_CONST;
+terminal Integer  INT_CONST ;
 terminal Double   FLOAT_CONST;
 terminal String   STRING_CONST;
 terminal Boolean  TRUE, FALSE;
@@ -21,12 +23,14 @@ non terminal Program, Global, Functions, Def_fun, Par_decls, Var_decls,
   Var_init_value, Type, Types, Statements, Stat, Vars, Exprs, Expr;
 
 /* Precendeces */
+precedence left AND, OR, LT, LE, EQ, NE, GT, GE;
 precedence left PLUS, MINUS;
 precedence left TIMES, DIV;
 precedence left UMINUS;
 
 /* The grammar */
-Program ::= Global Functions
+Program ::= Global:g Functions:fs
+{: System.out.println("ciao"); :}
 ;
 
 Global ::= GLOBAL Var_decls END
@@ -69,6 +73,7 @@ Statements ::= Stat SEMI Statements
 
 Stat ::= NOP
   | WHILE Expr DO Statements END
+  | IF Expr THEN Statements END
   | IF Expr THEN Statements ELSE Statements END
   | FOR ID ASSIGN Expr COMMA Expr DO Statements END
   | LOCAL Var_decls SEMI Statements END
@@ -109,6 +114,7 @@ Expr ::= NIL
   | Expr LT Expr
   | Expr LE Expr
   | Expr EQ Expr
+  | Expr NE Expr
   | MINUS Expr
   | NOT Expr
   | SHARP Expr
