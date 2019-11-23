@@ -32,7 +32,7 @@ public class FunctionCallStatement extends Statement {
 
   @Override
   public <T, P> T accept(Visitor<T, P> visitor, P arg) {
-    return visitor.accept(this, arg);
+    return visitor.visit(this, arg);
   }
 
 

@@ -34,14 +34,24 @@ public interface Visitor<T, P> {
 
    T visit(ArrayElemAssignStatement arrayElemAssignStatement, P arg);
 
-   T accept(FunctionCallStatement functionCallStatement, P arg);
+   T visit(FunctionCallStatement functionCallStatement, P arg);
 
    T visit(ReadStatement readStatement, P arg);
 
    T visit(WriteStatements writeStatements, P arg);
 
-   T accept(ReturnStatement returnStatement, P arg);
+   T visit(ReturnStatement returnStatement, P arg);
 
    T visit(LocalStatement localStatement, P arg);
+
+   T visit(NilConst nilConst, P arg);
+
+   T visit(BooleanConst booleanConst, P arg);
+
+   T visit(IntegerConst integerConst, P arg);
+
+   T visit(FloatConst floatConst, P arg);
+
+   T visit(StringConst stringConst, P arg);
 
 }

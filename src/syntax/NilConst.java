@@ -3,20 +3,13 @@ package syntax;
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
 
-public class ReturnStatement extends Statement {
+/**
+ * NilConst
+ */
+public class NilConst extends Expr implements Leaf<Object> {
 
-  Expr expr;
-
-  public ReturnStatement(Location leftLocation, Location rightLocation, Expr expr) {
+  public NilConst(Location leftLocation, Location rightLocation) {
     super(leftLocation, rightLocation);
-    this.expr = expr;
-  }
-  
-  /**
-   * @return the expr
-   */
-  public Expr getExpr() {
-    return expr;
   }
 
   @Override
@@ -24,6 +17,11 @@ public class ReturnStatement extends Statement {
     return visitor.visit(this, arg);
   }
 
+  @Override
+  public Object getValue() {
+    return null;
+  }
 
+  
   
 }
