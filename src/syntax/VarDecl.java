@@ -1,8 +1,8 @@
 package syntax;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.expr.Id;
 import visitor.Visitor;
-import syntax.type.*;
 
 public class VarDecl extends AstNode {
 

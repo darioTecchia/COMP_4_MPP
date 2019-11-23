@@ -1,4 +1,6 @@
-package syntax;
+package syntax.expr;
+
+import syntax.Leaf;
 
 public class Id implements Leaf<String> {
 

@@ -3,9 +3,8 @@ package syntax;
 import java.util.ArrayList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
-import syntax.statement.Statement;
+import syntax.expr.Id;
 import visitor.Visitor;
-import syntax.type.*;
 
 public class Function extends AstNode {
 

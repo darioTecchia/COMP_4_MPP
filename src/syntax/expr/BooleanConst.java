@@ -1,13 +1,15 @@
-package syntax;
+package syntax.expr;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.Expr;
+import syntax.Leaf;
 import visitor.Visitor;
 
-public class IntegerConst extends Expr implements Leaf<Integer> {
+public class BooleanConst extends Expr implements Leaf<Boolean> {
 
-  private int value;
+  private Boolean value;
 
-  public IntegerConst(Location leftLocation, Location rightLocation, int value) {
+  public BooleanConst(Location leftLocation, Location rightLocation, Boolean value) {
     super(leftLocation, rightLocation);
     this.value = value;
   }
@@ -18,7 +20,7 @@ public class IntegerConst extends Expr implements Leaf<Integer> {
   }
 
   @Override
-  public Integer getValue() {
+  public Boolean getValue() {
     return this.value;
   }
 

@@ -1,13 +1,15 @@
-package syntax;
+package syntax.expr;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.Expr;
+import syntax.Leaf;
 import visitor.Visitor;
 
-public class StringConst extends Expr implements Leaf<String> {
+public class FloatConst extends Expr implements Leaf<Float> {
 
-  private String value;
+  private float value;
 
-  public StringConst(Location leftLocation, Location rightLocation, String value) {
+  public FloatConst(Location leftLocation, Location rightLocation, float value) {
     super(leftLocation, rightLocation);
     this.value = value;
   }
@@ -18,7 +20,7 @@ public class StringConst extends Expr implements Leaf<String> {
   }
 
   @Override
-  public String getValue() {
+  public Float getValue() {
     return this.value;
   }
 

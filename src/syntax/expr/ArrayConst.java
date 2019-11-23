@@ -1,4 +1,4 @@
-package syntax;
+package syntax.expr;
 
 /**
  * ArrayConst

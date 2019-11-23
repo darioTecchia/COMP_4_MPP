@@ -1,6 +1,7 @@
 package visitor;
 
 import syntax.*;
+import syntax.expr.*;
 import syntax.statement.*;
 import syntax.type.*;
 

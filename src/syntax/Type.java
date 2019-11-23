@@ -1,4 +1,4 @@
-package syntax.type;
+package syntax;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.*;

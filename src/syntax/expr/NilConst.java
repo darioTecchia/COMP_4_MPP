@@ -1,6 +1,8 @@
-package syntax;
+package syntax.expr;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.Expr;
+import syntax.Leaf;
 import visitor.Visitor;
 
 /**

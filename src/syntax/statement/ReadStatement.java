@@ -3,6 +3,7 @@ package syntax.statement;
 import java.util.ArrayList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.expr.Id;
 import visitor.Visitor;
 import syntax.*;
 

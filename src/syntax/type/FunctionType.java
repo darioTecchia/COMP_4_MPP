@@ -3,6 +3,7 @@ package syntax.type;
 import java.util.ArrayList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.Type;
 import visitor.Visitor;
 
 public class FunctionType extends Type {
