@@ -1,6 +1,7 @@
-package syntax;
+package syntax.statement;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.AstNode;
 
 public abstract class Statement extends AstNode {
 

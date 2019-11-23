@@ -3,6 +3,7 @@ package syntax;
 import java.util.ArrayList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.statement.Statement;
 import visitor.Visitor;
 
 public class Function extends AstNode {

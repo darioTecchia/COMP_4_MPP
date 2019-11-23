@@ -1,18 +1,16 @@
-package syntax;
+package syntax.statement;
 
 import java.util.ArrayList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
 
-public class LocalStatement extends Statement {
+public class WhileStatement extends Statement {
 
-  private ArrayList<VarDecl> varDecls;
   private ArrayList<Statement> statements;
 
-  public LocalStatement(Location leftLocation, Location rightLocation, ArrayList<VarDecl> varDecls, ArrayList<Statement> statements) {
+  public WhileStatement(Location leftLocation, Location rightLocation, ArrayList<Statement> statements) {
     super(leftLocation, rightLocation);
-    this.varDecls = varDecls;
     this.statements = statements;
   }
 
@@ -23,16 +21,9 @@ public class LocalStatement extends Statement {
     return statements;
   }
 
-  /**
-   * @return the varDecls
-   */
-  public ArrayList<VarDecl> getVarDecls() {
-    return varDecls;
-  }
-
   @Override
   public <T, P> T accept(Visitor<T, P> visitor, P arg) {
-    return visitor.visit(this, arg);
+    return null;
   }
 
 }

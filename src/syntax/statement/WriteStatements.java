@@ -1,8 +1,9 @@
-package syntax;
+package syntax.statement;
 
 import java.util.ArrayList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.*;
 import visitor.Visitor;
 
 public class WriteStatements extends Statement {
