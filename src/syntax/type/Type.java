@@ -1,6 +1,7 @@
-package syntax;
+package syntax.type;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
+import syntax.*;
 
 public abstract class Type extends AstNode {
 

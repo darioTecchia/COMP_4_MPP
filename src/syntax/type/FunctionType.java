@@ -1,4 +1,4 @@
-package syntax;
+package syntax.type;
 
 import java.util.ArrayList;
 

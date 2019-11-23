@@ -1,27 +1,27 @@
-package syntax;
+package syntax.type;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
 
-public class PrimitiveType extends Type {
+public class ArrayType extends Type {
 
-  private String kind;
+  private Type type;
 
-  public PrimitiveType(String kind, Location leftLocation, Location rightLocation) {
+  public ArrayType(Location leftLocation, Location rightLocation, Type type) {
     super(leftLocation, rightLocation);
-    this.kind = kind;
+    this.type = type;
   }
 
   /**
-   * @return the kind
+   * @return the type
    */
-  public String getKind() {
-    return kind;
+  public Type getType() {
+    return type;
   }
 
   @Override
   public <T, P> T accept(Visitor<T, P> visitor, P arg) {
     return visitor.visit(this, arg);
   }
-
+  
 }

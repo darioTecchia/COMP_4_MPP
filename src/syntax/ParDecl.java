@@ -2,6 +2,7 @@ package syntax;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
+import syntax.type.*;
 
 public class ParDecl extends AstNode {
 

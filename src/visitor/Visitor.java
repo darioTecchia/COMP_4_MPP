@@ -2,6 +2,7 @@ package visitor;
 
 import syntax.*;
 import syntax.statement.*;
+import syntax.type.*;
 
 public interface Visitor<T, P> {
 
