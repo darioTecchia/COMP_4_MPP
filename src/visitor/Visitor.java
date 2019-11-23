@@ -55,4 +55,8 @@ public interface Visitor<T, P> {
 
    T visit(ArrayElemAssignStatement arrayElemAssignStatement, P arg);
 
+   T visit(ArrayRead arrayRead, P arg);
+
+   T visit(FunctionCall functionCall, P arg);
+
 }
