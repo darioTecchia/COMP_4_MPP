@@ -1,7 +1,6 @@
 package test;
 
-import dist.Lexer;
-import dist.Parser;
+import dist.*;
 
 public class ParserTester {
 

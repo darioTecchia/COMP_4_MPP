@@ -29,8 +29,7 @@ precedence left TIMES, DIV;
 precedence left UMINUS;
 
 /* The grammar */
-Program ::= Global:g Functions:fs
-{: System.out.println("ciao"); :}
+Program ::= Global Functions
 ;
 
 Global ::= GLOBAL Var_decls END

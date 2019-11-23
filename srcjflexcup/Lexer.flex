@@ -40,7 +40,7 @@ import java_cup.runtime.Symbol;
     }
   }
 
-  Lexer() { }
+  public Lexer() { }
 %}
 
 LineTerminator = \r|\n|\r\n
@@ -72,8 +72,8 @@ GlobalKeyword = [gG][lL][oO][bB][aA][lL]
 <YYINITIAL> {
 
   /* keywords */
-  "function" { return generateTokenSym(ParserSym.FUNCTION) }
-  "end" { return generateTokenSym(ParserSym.END) }
+  "function" { return generateTokenSym(ParserSym.FUNCTION); }
+  "end" { return generateTokenSym(ParserSym.END); }
   "if" { return generateTokenSym(ParserSym.IF); }
   "then" { return generateTokenSym(ParserSym.THEN); }
   "else" { return generateTokenSym(ParserSym.ELSE); }
@@ -81,7 +81,7 @@ GlobalKeyword = [gG][lL][oO][bB][aA][lL]
   "do" { return generateTokenSym(ParserSym.DO); }
   "for" { return generateTokenSym(ParserSym.FOR); }
   "local" { return generateTokenSym(ParserSym.LOCAL); }
-  {GlobalKeyword} { return generateTokenSym(ParserSym.GLOBAL) }
+  {GlobalKeyword} { return generateTokenSym(ParserSym.GLOBAL); }
   "<==" { return generateTokenSym(ParserSym.READ); }
   "==>" { return generateTokenSym(ParserSym.WRITE); }
   "return" { return generateTokenSym(ParserSym.RETURN); }

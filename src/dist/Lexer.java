@@ -11,7 +11,7 @@ import java_cup.runtime.Symbol;
 
 
 
-class Lexer implements java_cup.runtime.Scanner {
+public class Lexer implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file */
   public static final int YYEOF = -1;
@@ -550,7 +550,7 @@ class Lexer implements java_cup.runtime.Scanner {
     }
   }
 
-  Lexer() { }
+  public Lexer() { }
 
 
   /**
