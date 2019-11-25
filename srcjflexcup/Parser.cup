@@ -2,6 +2,19 @@ package dist;
 
 import java_cup.runtime.*;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import java.util.ArrayList;
+
+import syntax.*;
+import syntax.expr.*;
+import syntax.type.*;
+import syntax.statement.*;
+import syntax.expr.unaryexpr.*;
+import syntax.expr.binaryexpr.arithop.*;
+import syntax.expr.binaryexpr.relop.*;
+
 class Parser;
 
 /* Terminals (tokens returned by the scanner). */
@@ -13,14 +26,26 @@ terminal AND, OR, LT, LE, EQ, NE, GT, GE, ARROW, ASSIGN, NOP;
 terminal PLUS, MINUS, TIMES, DIV;
 terminal UMINUS;
 
-terminal Integer  INT_CONST ;
+terminal Integer  INT_CONST;
 terminal Double   FLOAT_CONST;
 terminal String   STRING_CONST;
 terminal Boolean  TRUE, FALSE;
 
 /* Non Terminals */
-non terminal Program, Global, Functions, Def_fun, Par_decls, Var_decls,
-  Var_init_value, Type, Types, Statements, Stat, Vars, Exprs, Expr;
+non terminal Program Program;
+non terminal Global Global;
+non terminal ArrayList<Function> Functions;
+non terminal Function Def_fun;
+non terminal ArrayList<ParDecl> Par_decls;
+non terminal ArrayList<VarDecl> Var_decls;
+non terminal VarInitValue Var_init_value;
+non terminal Type Type;
+non terminal ArrayList<Type> Types;
+non terminal ArrayList<Statement> Statements;
+non terminal Statement Stat;
+non terminal ArrayList<Id> Vars;
+non terminal ArrayList<Expr> Exprs;
+non terminal Expr Expr;
 
 /* Precendeces */
 precedence left AND, OR, LT, LE, EQ, NE, GT, GE;

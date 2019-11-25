@@ -24,6 +24,4 @@ public class NilConst extends Expr implements Leaf<Object> {
     return null;
   }
 
-  
-  
 }

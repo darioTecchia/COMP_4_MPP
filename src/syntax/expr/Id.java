@@ -1,12 +1,16 @@
 package syntax.expr;
 
+import java_cup.runtime.ComplexSymbolFactory;
+import syntax.Expr;
 import syntax.Leaf;
+import visitor.Visitor;
 
-public class Id implements Leaf<String> {
+public class Id extends Expr implements Leaf<String> {
 
   private String name;
 
-  public Id(String name) {
+  public Id(ComplexSymbolFactory.Location leftLocation, ComplexSymbolFactory.Location rightLocation, String name) {
+    super(leftLocation, rightLocation);
     this.name = name;
   }
 
@@ -22,4 +26,8 @@ public class Id implements Leaf<String> {
     return this.name;
   }
 
+  @Override
+  public <T, P> T accept(Visitor<T, P> visitor, P arg) {
+    return visitor.visit(this, arg);
+  }
 }
