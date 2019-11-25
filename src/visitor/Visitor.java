@@ -1,9 +1,14 @@
 package visitor;
 
 import syntax.*;
-import syntax.expr.*;
 import syntax.statement.*;
 import syntax.type.*;
+import syntax.expr.*;
+import syntax.expr.binaryexpr.arithop.*;
+import syntax.expr.binaryexpr.relop.*;
+import syntax.expr.unaryexpr.NotExpr;
+import syntax.expr.unaryexpr.SharpExpr;
+import syntax.expr.unaryexpr.UminusExpr;
 
 public interface Visitor<T, P> {
 
@@ -58,5 +63,35 @@ public interface Visitor<T, P> {
    T visit(ArrayRead arrayRead, P arg);
 
    T visit(FunctionCall functionCall, P arg);
+
+   T visit(MinusOp minusOp, P arg);
+
+   T visit(PlusOp plusOp, P arg);
+
+   T visit(TimesOp timesOp, P arg);
+
+   T visit(DivOp divOp, P arg);
+
+   T visit(AndRelop andRelop, P arg);
+
+   T visit(GreaterThanRelop greaterThanRelop, P arg);
+
+   T visit(OrRelop orRelop, P arg);
+
+   T visit(GreaterThanERelop greaterThanERelop, P arg);
+
+   T visit(LessThenRelop lessThenRelop, P arg);
+
+   T visit(LessThenERelop lessThenERelop, P arg);
+
+   T visit(EqualsRelop equalsRelop, P arg);
+
+   T visit(NotEqualsRelop notEqualsRelop, P arg);
+
+   T visit(UminusExpr uminusExpr, P arg);
+
+   T visit(NotExpr notExpr, P arg);
+
+   T visit(SharpExpr sharpExpr, P arg);
 
 }
