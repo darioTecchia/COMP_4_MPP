@@ -166,6 +166,6 @@ GlobalKeyword = [gG][lL][oO][bB][aA][lL]
 }
 
 /* error fallback */
-[^] { 
+[^] {
   throw new RuntimeException("Error:(" + yyline + ":" + yycolumn + ") Cannot resolve symbol '"+yytext()+"'"); 
 }

@@ -7,6 +7,6 @@ function a (q: int):int
         a: int = 12;
         nop;
         nop
-    end
+    end;
     return true
 end

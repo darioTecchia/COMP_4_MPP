@@ -104,7 +104,7 @@ public class ConcreteXMLVisitor implements Visitor<Element, Document> {
   }
 
   @Override
-  public Element visit(WriteStatements writeStatements, Document arg) {
+  public Element visit(WriteStatement writeStatements, Document arg) {
     System.out.println();
     return null;
   }
@@ -268,6 +268,12 @@ public class ConcreteXMLVisitor implements Visitor<Element, Document> {
   @Override
   public Element visit(ArrayConst arrayConst, Document arg) {
     System.out.println();
+    return null;
+  }
+
+  @Override
+  public Element visit(NopStatement nopStatement, Document arg) {
+    // TODO Auto-generated method stub
     return null;
   }
 

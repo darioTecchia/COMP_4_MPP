@@ -42,7 +42,7 @@ public interface Visitor<T, P> {
 
   T visit(ReadStatement readStatement, P arg);
 
-  T visit(WriteStatements writeStatements, P arg);
+  T visit(WriteStatement writeStatements, P arg);
 
   T visit(ReturnStatement returnStatement, P arg);
 
@@ -97,4 +97,6 @@ public interface Visitor<T, P> {
   T visit(Id id, P arg);
 
   T visit(ArrayConst arrayConst, P arg);
+
+  T visit(NopStatement nopStatement, P arg);
 }

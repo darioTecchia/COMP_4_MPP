@@ -6,11 +6,11 @@ import java.util.LinkedList;
 import syntax.*;
 import visitor.Visitor;
 
-public class WriteStatements extends Statement {
+public class WriteStatement extends Statement {
 
   private LinkedList<Expr> exprs;
 
-  public WriteStatements(int leftLocation, int rightLocation, LinkedList<Expr> exprs) {
+  public WriteStatement(int leftLocation, int rightLocation, LinkedList<Expr> exprs) {
     super(leftLocation, rightLocation);
     this.exprs = exprs;
   }
