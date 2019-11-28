@@ -141,7 +141,7 @@ GlobalKeyword = [gG][lL][oO][bB][aA][lL]
 
   /* literals */
   {IntegerLiteral} { return generateTokenSym(ParserSym.INT_CONST, Integer.parseInt(yytext())); }
-  {FloatLiteral} { return generateTokenSym(ParserSym.FLOAT_CONST, Double.parseDouble(yytext())); }
+  {FloatLiteral} { return generateTokenSym(ParserSym.FLOAT_CONST, Float.parseFloat(yytext())); }
   \" { string.setLength(0); yybegin(STRING); }
 
   /* comments */

@@ -1,12 +1,24 @@
 global
-    t: int = 0
+    result: float = 0.0;
+    buffer: float = 0.0
 end
 
-function a (q: int):int
+function add(x: float, y: float):float
+    x = x + 1;
     local
-        a: int = 12;
-        nop;
-        nop
-    end;
-    return true
+        i: float = 2.0;
+        i= i + 1;
+        local
+            i: float = 1.0;
+            i = i + 1;
+            y = y + 1
+         end;
+         return x + y + i
+    end
+end
+
+function main(): nil
+     buffer, result <==;
+     result = addInc(result + 1, buffer);
+     "la somma risulta: ", result ==>
 end

@@ -1065,7 +1065,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 84: break;
           case 26: 
-            { return generateTokenSym(ParserSym.FLOAT_CONST, Double.parseDouble(yytext()));
+            { return generateTokenSym(ParserSym.FLOAT_CONST, Float.parseFloat(yytext()));
             } 
             // fall through
           case 85: break;
