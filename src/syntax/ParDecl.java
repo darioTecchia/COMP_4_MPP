@@ -9,7 +9,7 @@ public class ParDecl extends AstNode {
   private Id id;
   private Type type;
 
-  public ParDecl(Location leftLocation, Location rightLocation, Id id, Type type) {
+  public ParDecl(int leftLocation, int rightLocation, Id id, Type type) {
     super(leftLocation, rightLocation);
     this.id = id;
     this.type = type;

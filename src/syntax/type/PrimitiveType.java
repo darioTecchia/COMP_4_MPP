@@ -8,7 +8,7 @@ public class PrimitiveType extends Type {
 
   private String kind;
 
-  public PrimitiveType(String kind, Location leftLocation, Location rightLocation) {
+  public PrimitiveType(int leftLocation, int rightLocation, String kind) {
     super(leftLocation, rightLocation);
     this.kind = kind;
   }

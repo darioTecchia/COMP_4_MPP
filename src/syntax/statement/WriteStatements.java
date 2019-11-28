@@ -1,6 +1,6 @@
 package syntax.statement;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.*;
@@ -8,9 +8,9 @@ import visitor.Visitor;
 
 public class WriteStatements extends Statement {
 
-  private ArrayList<Expr> exprs;
+  private LinkedList<Expr> exprs;
 
-  public WriteStatements(Location leftLocation, Location rightLocation, ArrayList<Expr> exprs) {
+  public WriteStatements(int leftLocation, int rightLocation, LinkedList<Expr> exprs) {
     super(leftLocation, rightLocation);
     this.exprs = exprs;
   }
@@ -18,7 +18,7 @@ public class WriteStatements extends Statement {
   /**
    * @return the exprs
    */
-  public ArrayList<Expr> getExprs() {
+  public LinkedList<Expr> getExprs() {
     return exprs;
   }
 

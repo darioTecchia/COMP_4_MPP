@@ -10,7 +10,7 @@ public class AndRelop extends BinaryOp {
   private Expr leftOperand;
   private Expr rightOperand;
 
-  public AndRelop(Location leftLocation, Location rightLocation, Expr leftOperand, Expr rightOperand) {
+  public AndRelop(int leftLocation, int rightLocation, Expr leftOperand, Expr rightOperand) {
     super(leftLocation, rightLocation);
     this.leftOperand = leftOperand;
     this.rightOperand = rightOperand;

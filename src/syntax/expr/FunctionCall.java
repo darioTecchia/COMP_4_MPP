@@ -1,6 +1,6 @@
 package syntax.expr;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.Expr;
@@ -9,9 +9,9 @@ import visitor.Visitor;
 public class FunctionCall extends Expr {
 
   private Id id;
-  private ArrayList<Expr> exprs;
+  private LinkedList<Expr> exprs;
 
-  public FunctionCall(Location leftLocation, Location rightLocation, Id id, ArrayList<Expr> exprs) {
+  public FunctionCall(int leftLocation, int rightLocation, Id id, LinkedList<Expr> exprs) {
     super(leftLocation, rightLocation);
     this.id = id;
     this.exprs = exprs;
@@ -20,7 +20,7 @@ public class FunctionCall extends Expr {
   /**
    * @return the exprs
    */
-  public ArrayList<Expr> getExprs() {
+  public LinkedList<Expr> getExprs() {
     return exprs;
   }
 

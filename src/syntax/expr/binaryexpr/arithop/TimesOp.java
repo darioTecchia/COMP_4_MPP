@@ -10,7 +10,7 @@ public class TimesOp extends BinaryOp {
   private Expr leftOperand;
   private Expr rightOperand;
 
-  public TimesOp(Location leftLocation, Location rightLocation, Expr leftOperand, Expr rightOperand) {
+  public TimesOp(int leftLocation, int rightLocation, Expr leftOperand, Expr rightOperand) {
     super(leftLocation, rightLocation);
     this.leftOperand = leftOperand;
     this.rightOperand = rightOperand;

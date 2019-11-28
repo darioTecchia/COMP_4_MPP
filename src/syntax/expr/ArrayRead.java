@@ -9,7 +9,7 @@ public class ArrayRead extends Expr {
   private Expr arrayExpr;
   private Expr arrayPointerExpr;
 
-  public ArrayRead(Location leftLocation, Location rightLocation, Expr arrayExpr, Expr arrayPointerExpr) {
+  public ArrayRead(int leftLocation, int rightLocation, Expr arrayExpr, Expr arrayPointerExpr) {
     super(leftLocation, rightLocation);
     this.arrayExpr = arrayExpr;
     this.arrayPointerExpr = arrayPointerExpr;

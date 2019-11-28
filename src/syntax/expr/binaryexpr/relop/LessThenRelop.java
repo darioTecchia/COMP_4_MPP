@@ -10,7 +10,7 @@ public class LessThenRelop extends BinaryOp {
   private Expr leftOperand;
   private Expr rightOperand;
 
-  public LessThenRelop(Location leftLocation, Location rightLocation, Expr leftOperand, Expr rightOperand) {
+  public LessThenRelop(int leftLocation, int rightLocation, Expr leftOperand, Expr rightOperand) {
     super(leftLocation, rightLocation);
     this.leftOperand = leftOperand;
     this.rightOperand = rightOperand;

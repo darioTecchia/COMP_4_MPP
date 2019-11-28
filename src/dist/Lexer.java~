@@ -11,7 +11,7 @@ import java_cup.runtime.Symbol;
 
 
 
-class Lexer implements java_cup.runtime.Scanner {
+public class Lexer implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file */
   public static final int YYEOF = -1;
@@ -932,9 +932,8 @@ class Lexer implements java_cup.runtime.Scanner {
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
             zzDoEOF();
-              {
-                return generateTokenSym(ParserSym.EOF);
-              }
+          { 	return generateTokenSym(ParserSym.EOF);
+ }
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
@@ -1216,7 +1215,7 @@ class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 114: break;
           case 56: 
-            { return generateTokenSym(ParserSym.GLOBAL)
+            { return generateTokenSym(ParserSym.GLOBAL);
             } 
             // fall through
           case 115: break;

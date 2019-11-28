@@ -9,7 +9,7 @@ public class FloatConst extends Expr implements Leaf<Float> {
 
   private float value;
 
-  public FloatConst(Location leftLocation, Location rightLocation, float value) {
+  public FloatConst(int leftLocation, int rightLocation, float value) {
     super(leftLocation, rightLocation);
     this.value = value;
   }

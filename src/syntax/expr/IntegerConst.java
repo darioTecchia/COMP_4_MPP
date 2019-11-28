@@ -9,7 +9,7 @@ public class IntegerConst extends Expr implements Leaf<Integer> {
 
   private int value;
 
-  public IntegerConst(Location leftLocation, Location rightLocation, int value) {
+  public IntegerConst(int leftLocation, int rightLocation, int value) {
     super(leftLocation, rightLocation);
     this.value = value;
   }

@@ -9,7 +9,7 @@ public class BooleanConst extends Expr implements Leaf<Boolean> {
 
   private Boolean value;
 
-  public BooleanConst(Location leftLocation, Location rightLocation, Boolean value) {
+  public BooleanConst(int leftLocation, int rightLocation, Boolean value) {
     super(leftLocation, rightLocation);
     this.value = value;
   }

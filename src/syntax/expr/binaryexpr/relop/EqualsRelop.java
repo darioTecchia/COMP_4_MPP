@@ -10,7 +10,7 @@ public class EqualsRelop extends BinaryOp {
   private Expr leftOperand;
   private Expr rightOperand;
 
-  public EqualsRelop(Location leftLocation, Location rightLocation, Expr leftOperand, Expr rightOperand) {
+  public EqualsRelop(int leftLocation, int rightLocation, Expr leftOperand, Expr rightOperand) {
     super(leftLocation, rightLocation);
     this.leftOperand = leftOperand;
     this.rightOperand = rightOperand;

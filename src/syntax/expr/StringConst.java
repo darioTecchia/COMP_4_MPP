@@ -9,7 +9,7 @@ public class StringConst extends Expr implements Leaf<String> {
 
   private String value;
 
-  public StringConst(Location leftLocation, Location rightLocation, String value) {
+  public StringConst(int leftLocation, int rightLocation, String value) {
     super(leftLocation, rightLocation);
     this.value = value;
   }

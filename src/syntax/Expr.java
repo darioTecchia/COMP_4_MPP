@@ -4,7 +4,7 @@ import java_cup.runtime.ComplexSymbolFactory.Location;
 
 public abstract class Expr extends AstNode {
 
-  public Expr(Location leftLocation, Location rightLocation) {
+  public Expr(int leftLocation, int rightLocation) {
     super(leftLocation, rightLocation);
   }
 

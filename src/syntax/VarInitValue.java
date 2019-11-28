@@ -7,7 +7,7 @@ public class VarInitValue extends AstNode {
 
   private Expr expr;
 
-  public VarInitValue(Location leftLocation, Location rightLocation, Expr expr) {
+  public VarInitValue(int leftLocation, int rightLocation, Expr expr) {
     super(leftLocation, rightLocation);
     this.expr = expr;
   }

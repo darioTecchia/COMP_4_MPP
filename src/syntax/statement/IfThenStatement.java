@@ -8,7 +8,7 @@ public class IfThenStatement extends Statement {
 
   private Expr expr;
 
-  public IfThenStatement(Location leftLocation, Location rightLocation, Expr expr) {
+  public IfThenStatement(int leftLocation, int rightLocation, Expr expr) {
     super(leftLocation, rightLocation);
     this.expr = expr;
   }

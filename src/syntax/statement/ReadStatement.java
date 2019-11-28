@@ -1,6 +1,6 @@
 package syntax.statement;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.expr.Id;
@@ -9,9 +9,9 @@ import syntax.*;
 
 public class ReadStatement extends Statement {
 
-  ArrayList<Id> vars;
+  LinkedList<Id> vars;
 
-  public ReadStatement(Location leftLocation, Location rightLocation, ArrayList<Id> vars) {
+  public ReadStatement(int leftLocation, int rightLocation, LinkedList<Id> vars) {
     super(leftLocation, rightLocation);
     this.vars = vars;
   }
@@ -19,7 +19,7 @@ public class ReadStatement extends Statement {
   /**
    * @return the vars
    */
-  public ArrayList<Id> getVars() {
+  public LinkedList<Id> getVars() {
     return vars;
   }
 

@@ -17,6 +17,8 @@ import java_cup.runtime.Symbol;
 
 %unicode
 
+%public
+
 %line
 %column
 
@@ -42,6 +44,10 @@ import java_cup.runtime.Symbol;
 
   public Lexer() { }
 %}
+
+%eofval{
+	return generateTokenSym(ParserSym.EOF);
+%eofval}
 
 LineTerminator = \r|\n|\r\n
 InputCharacter = [^\r\n]
@@ -158,8 +164,6 @@ GlobalKeyword = [gG][lL][oO][bB][aA][lL]
   \\\" { string.append('\"'); }
   \\  { string.append('\\'); }
 }
-
-<<EOF>> { return generateTokenSym(ParserSym.EOF); }
 
 /* error fallback */
 [^] { 

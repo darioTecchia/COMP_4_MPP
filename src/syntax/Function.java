@@ -1,6 +1,6 @@
 package syntax;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.expr.Id;
@@ -9,15 +9,16 @@ import visitor.Visitor;
 public class Function extends AstNode {
 
   private Id id;
-  private ArrayList<ParDecl> parDecls;
+  private LinkedList<ParDecl> parDecls;
   private Type type;
-  private ArrayList<Statement> statements;
+  private LinkedList<Statement> statements;
 
   /**
    * Function definition with params
    */
-  public Function(Location leftLocation, Location rightLocation, ArrayList<ParDecl> parDecls, Type type, ArrayList<Statement> statements) {
+  public Function(int leftLocation, int rightLocation, Id id, LinkedList<ParDecl> parDecls, Type type, LinkedList<Statement> statements) {
     super(leftLocation, rightLocation);
+    this.id = id;
     this.parDecls = parDecls;
     this.type = type;
     this.statements = statements;
@@ -26,9 +27,10 @@ public class Function extends AstNode {
   /**
    * Function definition without params
    */
-  public Function(Location leftLocation, Location rightLocation, Type type, ArrayList<Statement> statements) {
+  public Function(int leftLocation, int rightLocation, Id id, Type type, LinkedList<Statement> statements) {
     super(leftLocation, rightLocation);
-    this.parDecls = new ArrayList<>();
+    this.id = id;
+    this.parDecls = new LinkedList<>();
     this.type = type;
     this.statements = statements;
   }
@@ -43,14 +45,14 @@ public class Function extends AstNode {
   /**
    * @return the parDecls
    */
-  public ArrayList<ParDecl> getParDecls() {
+  public LinkedList<ParDecl> getParDecls() {
     return parDecls;
   }
 
   /**
    * @return the statements
    */
-  public ArrayList<Statement> getStatements() {
+  public LinkedList<Statement> getStatements() {
     return statements;
   }
 

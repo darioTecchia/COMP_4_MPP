@@ -5,19 +5,19 @@ import visitor.Visitable;
 
 public abstract class AstNode implements Visitable {
 
-  private final Location leftLocation;
-  private final Location rightLocation;
+  private int leftLocation;
+  private int rightLocation;
 
-  public AstNode(Location leftLocation, Location rightLocation) {
+  public AstNode(int leftLocation, int rightLocation) {
     this.leftLocation = leftLocation;
     this.rightLocation = rightLocation;
   }
 
-  public Location getLeftLocation() {
+  public int getLeftLocation() {
     return leftLocation;
   }
 
-  public Location getRightLocation() {
+  public int getRightLocation() {
     return rightLocation;
   }
 }

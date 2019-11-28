@@ -9,7 +9,7 @@ public class UminusExpr extends UnaryOp {
 
   private Expr expr;
 
-  public UminusExpr(Location leftLocation, Location rightLocation, Expr expr) {
+  public UminusExpr(int leftLocation, int rightLocation, Expr expr) {
     super(leftLocation, rightLocation);
     this.expr = expr;
   }

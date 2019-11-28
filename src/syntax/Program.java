@@ -1,6 +1,6 @@
 package syntax;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
@@ -8,9 +8,9 @@ import visitor.Visitor;
 public class Program extends AstNode {
 
   private Global global;
-  private ArrayList<Function> functions;
+  private LinkedList<Function> functions;
 
-  public Program(Location leftLocation, Location rightLocation, Global global, ArrayList<Function> functions) {
+  public Program(int leftLocation, int rightLocation, Global global, LinkedList<Function> functions) {
     super(leftLocation, rightLocation);
     this.global = global;
     this.functions = functions;
@@ -26,7 +26,7 @@ public class Program extends AstNode {
   /**
    * @return the functions
    */
-  public ArrayList<Function> getFunctions() {
+  public LinkedList<Function> getFunctions() {
     return this.functions;
   }
 

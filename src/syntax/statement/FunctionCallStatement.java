@@ -1,6 +1,6 @@
 package syntax.statement;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.expr.Id;
@@ -10,9 +10,9 @@ import syntax.*;
 public class FunctionCallStatement extends Statement {
 
   private Id id;
-  private ArrayList<Expr> functionParams;
+  private LinkedList<Expr> functionParams;
 
-  public FunctionCallStatement(Location leftLocation, Location rightLocation, Id id, ArrayList<Expr> functionParams) {
+  public FunctionCallStatement(int leftLocation, int rightLocation, Id id, LinkedList<Expr> functionParams) {
     super(leftLocation, rightLocation);
     this.id = id;
     this.functionParams = functionParams;
@@ -21,7 +21,7 @@ public class FunctionCallStatement extends Statement {
   /**
    * @return the functionParams
    */
-  public ArrayList<Expr> getFunctionParams() {
+  public LinkedList<Expr> getFunctionParams() {
     return functionParams;
   }
 

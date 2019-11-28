@@ -1,6 +1,6 @@
 package syntax.expr;
 
-import java_cup.runtime.ComplexSymbolFactory;
+import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.Expr;
 import syntax.Leaf;
 import visitor.Visitor;
@@ -9,7 +9,7 @@ public class Id extends Expr implements Leaf<String> {
 
   private String name;
 
-  public Id(ComplexSymbolFactory.Location leftLocation, ComplexSymbolFactory.Location rightLocation, String name) {
+  public Id(int leftLocation, int rightLocation, String name) {
     super(leftLocation, rightLocation);
     this.name = name;
   }

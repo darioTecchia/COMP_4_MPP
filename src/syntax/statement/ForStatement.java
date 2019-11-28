@@ -11,7 +11,7 @@ public class ForStatement extends Statement {
   private Expr initExpr;
   private Expr postConditionExpr; 
 
-  public ForStatement(Location leftLocation, Location rightLocation, Id id, Expr initExpr, Expr postConditionExpr) {
+  public ForStatement(int leftLocation, int rightLocation, Id id, Expr initExpr, Expr postConditionExpr) {
     super(leftLocation, rightLocation);
     this.id = id;
     this.initExpr = initExpr;

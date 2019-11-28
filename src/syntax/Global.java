@@ -1,23 +1,28 @@
 package syntax;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
 
 public class Global extends AstNode {
 
-  private ArrayList<VarDecl> varDecls;
+  private LinkedList<VarDecl> varDecls;
 
-  public Global(Location leftLocation, Location rightLocation, ArrayList<VarDecl> varDecls) {
+  public Global(int leftLocation, int rightLocation, LinkedList<VarDecl> varDecls) {
     super(leftLocation, rightLocation);
     this.varDecls = varDecls;
+  }
+
+  public Global(int leftLocation, int rightLocation) {
+    super(leftLocation, rightLocation);
+    this.varDecls = new LinkedList<VarDecl>();
   }
 
   /**
    * @return the varDecls
    */
-  public ArrayList<VarDecl> getVarDecls() {
+  public LinkedList<VarDecl> getVarDecls() {
     return varDecls;
   }
 

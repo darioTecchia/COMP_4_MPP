@@ -8,7 +8,7 @@ public class ArrayConst extends Expr {
 
   private Type type;
 
-  public ArrayConst(Location leftLocation, Location rightLocation, Type type) {
+  public ArrayConst(int leftLocation, int rightLocation, Type type) {
     super(leftLocation, rightLocation);
     this.type = type;
   }

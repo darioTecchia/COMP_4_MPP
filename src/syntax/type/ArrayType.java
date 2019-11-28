@@ -8,7 +8,7 @@ public class ArrayType extends Type {
 
   private Type type;
 
-  public ArrayType(Location leftLocation, Location rightLocation, Type type) {
+  public ArrayType(int leftLocation, int rightLocation, Type type) {
     super(leftLocation, rightLocation);
     this.type = type;
   }

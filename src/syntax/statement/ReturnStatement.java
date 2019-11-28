@@ -8,7 +8,7 @@ public class ReturnStatement extends Statement {
 
   Expr expr;
 
-  public ReturnStatement(Location leftLocation, Location rightLocation, Expr expr) {
+  public ReturnStatement(int leftLocation, int rightLocation, Expr expr) {
     super(leftLocation, rightLocation);
     this.expr = expr;
   }

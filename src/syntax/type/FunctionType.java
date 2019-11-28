@@ -1,6 +1,6 @@
 package syntax.type;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import syntax.Type;
@@ -8,22 +8,32 @@ import visitor.Visitor;
 
 public class FunctionType extends Type {
 
-  private ArrayList<Type> types;
+  private LinkedList<Type> types;
+  private Type returnType;
 
-  public FunctionType(Location leftLocation, Location rightLocation, ArrayList<Type> types) {
+  public FunctionType(int leftLocation, int rightLocation, LinkedList<Type> types, Type returnType) {
     super(leftLocation, rightLocation);
+    this.returnType = returnType;
     this.types = types;
   }
 
-  public FunctionType(Location leftLocation, Location rightLocation) {
+  public FunctionType(int leftLocation, int rightLocation, Type returnType) {
     super(leftLocation, rightLocation);
-    this.types =  new ArrayList<>();
+    this.returnType = returnType;
+    this.types =  new LinkedList<>();
+  }
+
+  /**
+   * @return the returnType
+   */
+  public Type getReturnType() {
+    return returnType;
   }
 
   /**
    * @return the types
    */
-  public ArrayList<Type> getTypes() {
+  public LinkedList<Type> getTypes() {
     return types;
   }
 

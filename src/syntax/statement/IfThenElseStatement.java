@@ -1,6 +1,6 @@
 package syntax.statement;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import java_cup.runtime.ComplexSymbolFactory.Location;
 import visitor.Visitor;
@@ -9,10 +9,10 @@ import syntax.*;
 public class IfThenElseStatement extends Statement {
 
   private Expr expr;
-  private ArrayList<Statement> thenStatements;
-  private ArrayList<Statement> elseStatements;
+  private LinkedList<Statement> thenStatements;
+  private LinkedList<Statement> elseStatements;
 
-  public IfThenElseStatement(Location leftLocation, Location rightLocation, Expr expr, ArrayList<Statement> thenStatements, ArrayList<Statement> elseStatements) {
+  public IfThenElseStatement(int leftLocation, int rightLocation, Expr expr, LinkedList<Statement> thenStatements, LinkedList<Statement> elseStatements) {
     super(leftLocation, rightLocation);
     this.expr = expr;
     this.thenStatements = thenStatements;
@@ -29,14 +29,14 @@ public class IfThenElseStatement extends Statement {
   /**
    * @return the elseStatements
    */
-  public ArrayList<Statement> getElseStatements() {
+  public LinkedList<Statement> getElseStatements() {
     return elseStatements;
   }
 
   /**
    * @return the thenStatements
    */
-  public ArrayList<Statement> getThenStatements() {
+  public LinkedList<Statement> getThenStatements() {
     return thenStatements;
   }
 

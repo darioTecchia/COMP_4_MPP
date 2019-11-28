@@ -10,7 +10,7 @@ public class VarDecl extends AstNode {
   private Type type;
   private VarInitValue varInitValue;
 
-  public VarDecl(Location leftLocation, Location rightLocation, Id id, Type type, VarInitValue varInitValue) {
+  public VarDecl(int leftLocation, int rightLocation, Id id, Type type, VarInitValue varInitValue) {
     super(leftLocation, rightLocation);
     this.id = id;
     this.type = type;

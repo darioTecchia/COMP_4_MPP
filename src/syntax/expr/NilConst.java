@@ -10,7 +10,7 @@ import visitor.Visitor;
  */
 public class NilConst extends Expr implements Leaf<Object> {
 
-  public NilConst(Location leftLocation, Location rightLocation) {
+  public NilConst(int leftLocation, int rightLocation) {
     super(leftLocation, rightLocation);
   }
 

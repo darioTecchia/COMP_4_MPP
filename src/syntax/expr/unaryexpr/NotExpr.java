@@ -9,7 +9,7 @@ public class NotExpr extends UnaryOp {
 
   private Expr expr;
 
-  public NotExpr(Location leftLocation, Location rightLocation, Expr expr) {
+  public NotExpr(int leftLocation, int rightLocation, Expr expr) {
     super(leftLocation, rightLocation);
     this.expr = expr;
   }
