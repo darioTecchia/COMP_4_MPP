@@ -1,6 +1,6 @@
 package syntax.expr.binaryexpr.relop;
 
-import java_cup.runtime.ComplexSymbolFactory.Location;
+
 import syntax.Expr;
 import syntax.expr.BinaryOp;
 import visitor.Visitor;

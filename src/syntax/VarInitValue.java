@@ -1,6 +1,6 @@
 package syntax;
 
-import java_cup.runtime.ComplexSymbolFactory.Location;
+
 import visitor.Visitor;
 
 public class VarInitValue extends AstNode {

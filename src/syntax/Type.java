@@ -1,6 +1,6 @@
 package syntax;
 
-import java_cup.runtime.ComplexSymbolFactory.Location;
+
 
 public abstract class Type extends AstNode {
 

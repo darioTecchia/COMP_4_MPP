@@ -2,7 +2,7 @@ package syntax;
 
 import java.util.LinkedList;
 
-import java_cup.runtime.ComplexSymbolFactory.Location;
+
 import visitor.Visitor;
 
 public class Program extends AstNode {

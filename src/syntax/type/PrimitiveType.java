@@ -1,6 +1,6 @@
 package syntax.type;
 
-import java_cup.runtime.ComplexSymbolFactory.Location;
+
 import syntax.Type;
 import visitor.Visitor;
 

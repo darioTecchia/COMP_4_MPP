@@ -2,7 +2,7 @@ package syntax.type;
 
 import java.util.LinkedList;
 
-import java_cup.runtime.ComplexSymbolFactory.Location;
+
 import syntax.Type;
 import visitor.Visitor;
 
