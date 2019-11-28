@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Program>
+  <Global>
+    <VarDecl>
+      <Id lexeme="t"/>
+      <PrimitiveType kind="INT"/>
+      <VarInitValue>
+        <IntegerConst value="0"/>
+      </VarInitValue>
+    </VarDecl>
+  </Global>
+  <Function>
+    <Id lexeme="a"/>
+    <ParDecl>
+      <Id lexeme="q"/>
+      <PrimitiveType kind="INT"/>
+    </ParDecl>
+    <PrimitiveType kind="INT"/>
+    <LocalStatement>
+      <VarDecl>
+        <Id lexeme="a"/>
+        <PrimitiveType kind="INT"/>
+        <VarInitValue>
+          <IntegerConst value="12"/>
+        </VarInitValue>
+      </VarDecl>
+      <NopStatement/>
+      <NopStatement/>
+    </LocalStatement>
+    <ReturnStatement>
+      <BooleanConst value="true"/>
+    </ReturnStatement>
+  </Function>
+</Program>

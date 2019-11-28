@@ -1,11 +1,25 @@
 package syntax.expr;
 
 import syntax.Expr;
+import syntax.Leaf;
+import visitor.Visitor;
 
-public abstract class BooleanConst extends Expr {
+public class BooleanConst extends Expr implements Leaf<Boolean> {
 
-  public BooleanConst(int leftLocation, int rightLocation) {
+  private boolean value;
+
+  public BooleanConst(int leftLocation, int rightLocation, boolean value) {
     super(leftLocation, rightLocation);
+    this.value = value;
   }
 
+  @Override
+  public Boolean getValue() {
+    return this.value;
+  }
+
+  @Override
+  public <T, P> T accept(Visitor<T, P> visitor, P arg) {
+    return visitor.visit(this, arg);
+  }
 }

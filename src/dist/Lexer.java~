@@ -938,8 +938,7 @@ public class Lexer implements java_cup.runtime.Scanner {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { System.out.println("Error:(" + yyline + ":" + yycolumn + ") Cannot resolve symbol '"+yytext()+"'");
-  throw new RuntimeException("Error:(" + yyline + ":" + yycolumn + ") Cannot resolve symbol '"+yytext()+"'");
+            { throw new RuntimeException("Error:(" + yyline + ":" + yycolumn + ") Cannot resolve symbol '"+yytext()+"'");
             } 
             // fall through
           case 60: break;
@@ -1181,7 +1180,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 107: break;
           case 49: 
-            { return generateTokenSym(ParserSym.TRUE);
+            { return generateTokenSym(ParserSym.TRUE, true);
             } 
             // fall through
           case 108: break;
@@ -1201,7 +1200,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 111: break;
           case 53: 
-            { return generateTokenSym(ParserSym.FALSE);
+            { return generateTokenSym(ParserSym.FALSE, false);
             } 
             // fall through
           case 112: break;

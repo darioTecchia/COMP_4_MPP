@@ -1180,7 +1180,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 107: break;
           case 49: 
-            { return generateTokenSym(ParserSym.TRUE);
+            { return generateTokenSym(ParserSym.TRUE, true);
             } 
             // fall through
           case 108: break;
@@ -1200,7 +1200,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 111: break;
           case 53: 
-            { return generateTokenSym(ParserSym.FALSE);
+            { return generateTokenSym(ParserSym.FALSE, false);
             } 
             // fall through
           case 112: break;

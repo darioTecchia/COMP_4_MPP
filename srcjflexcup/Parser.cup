@@ -68,19 +68,16 @@ precedence left UMINUS, NOT, COMMA, SHARP;
 /* The grammar */
 Program ::= Global:g Functions:fs
             {:
-              new Program(fsleft, fsright, g, fs);
+              RESULT = new Program(fsleft, fsright, g, fs);
             :}
 ;
 
 Global ::= GLOBAL:g Var_decls:vs END
           {: 
-            new Global(gleft, gright, vs);
+            RESULT = new Global(gleft, gright, vs);
           :}
           | 
           /* empty */
-          {: 
-
-          :}
 ;
 
 Functions ::= Def_fun:df Functions:fs
@@ -137,10 +134,8 @@ Var_init_value ::= ASSIGN Expr:expr
                   {:
                     RESULT = new VarInitValue(exprleft, exprright, expr); 
                   :}
-                  | /* empty */
-                  {: 
-                    RESULT = null;
-                  :}
+                  | 
+                  /* empty */
 ;
 
 Type ::= NIL:nil
@@ -256,10 +251,10 @@ Expr ::= NIL:nilConst
         {: RESULT = new NilConst(nilConstleft, nilConstright); :}
         |
         TRUE:t
-        {: RESULT = new TrueConst(tleft, tright); :}
+        {: RESULT = new BooleanConst(tleft, tright, true); :}
         |
         FALSE:f
-        {: RESULT = new FalseConst(fleft, fright); :}
+        {: RESULT = new BooleanConst(fleft, fright, false); :}
         |
         INT_CONST:intConst
         {: RESULT = new IntegerConst(intConstleft, intConstright, intConst); :}

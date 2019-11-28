@@ -1,6 +1,7 @@
 package test;
 
 import dist.*;
+import syntax.Program;
 
 public class ParserTester {
 
@@ -13,7 +14,7 @@ public class ParserTester {
 
     if(lexer.initialize(args[0])) {
       parser = new Parser(lexer);
-      System.out.println(parser.parse().value);
+      System.out.println(parser.debug_parse().value);
     } else {
       System.out.println("File not found!");
     }
