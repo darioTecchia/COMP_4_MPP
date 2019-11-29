@@ -205,6 +205,9 @@ Stat ::= NOP:n
         {: RESULT = new WriteStatement(exprsleft, exprsright, exprs); :}
         | RETURN:r Expr:expr
         {: RESULT = new ReturnStatement(rleft, rright, expr); :}
+        |
+        error:e
+        {: System.out.println("left: " + eleft + " right: " + eright); :}
 ;
 
 Vars ::= ID:id COMMA Vars:vs
