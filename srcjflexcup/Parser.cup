@@ -67,15 +67,11 @@ precedence left UMINUS, NOT, COMMA, SHARP;
 
 /* The grammar */
 Program ::= Global:g Functions:fs
-            {:
-              RESULT = new Program(fsleft, fsright, g, fs);
-            :}
+            {: RESULT = new Program(fsleft, fsright, g, fs); :}
 ;
 
 Global ::= GLOBAL:g Var_decls:vs END
-          {: 
-            RESULT = new Global(gleft, gright, vs);
-          :}
+          {: RESULT = new Global(gleft, gright, vs); :}
           | 
           /* empty */
 ;
@@ -94,14 +90,10 @@ Functions ::= Def_fun:df Functions:fs
 ;
 
 Def_fun ::= FUNCTION:f ID:fName LPAR Par_decls:parDecls RPAR COLON Type:t Statements:stms END
-            {: 
-              RESULT = new Function(fleft, fright, new Id(fNameleft, fNameright, fName), parDecls, t, stms);
-            :}
+            {: RESULT = new Function(fleft, fright, new Id(fNameleft, fNameright, fName), parDecls, t, stms); :}
             |
             FUNCTION:f ID:fName LPAR RPAR COLON Type:t Statements:stms END
-            {: 
-              RESULT = new Function(fleft, fright, new Id(fNameleft, fNameright, fName), t, stms); 
-            :}
+            {: RESULT = new Function(fleft, fright, new Id(fNameleft, fNameright, fName), t, stms); :}
 ;
 
 Par_decls ::= ID:id COLON Type:t COMMA Par_decls:ps
@@ -131,9 +123,7 @@ Var_decls ::= Var_decls:vs SEMI ID:id COLON Type:t Var_init_value:varInit
 ;
 
 Var_init_value ::= ASSIGN Expr:expr
-                  {:
-                    RESULT = new VarInitValue(exprleft, exprright, expr); 
-                  :}
+                  {: RESULT = new VarInitValue(exprleft, exprright, expr); :}
                   | 
                   /* empty */
 ;
@@ -190,14 +180,10 @@ Statements ::= Stat:s SEMI Statements:ss
 ;
 
 Stat ::= NOP:n
-        {: 
-          RESULT = new NopStatement(nleft, nright); 
-        :}
+        {: RESULT = new NopStatement(nleft, nright); :}
         | 
         WHILE:w Expr:expr DO Statements:ss END
-        {:
-          RESULT = new WhileStatement(wleft, wright, expr, ss);
-        :}
+        {: RESULT = new WhileStatement(wleft, wright, expr, ss); :}
         | 
         IF:i Expr:expr THEN Statements:ss END
         {: RESULT = new IfThenStatement(ileft, iright, expr, ss); :}
