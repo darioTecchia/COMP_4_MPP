@@ -1,5 +1,5 @@
 global
-  keep: int = 1;
+  choice: int = 1;
 end
 
 function showMenu(): int
@@ -10,7 +10,7 @@ function showMenu(): int
     "2. Divisione a/b\n" ==>;
     "3. Moltiplicazione a*b\n" ==>;
     "3. Quadrato a*a\n" ==>;
-    "0. Esci a*b\n" ==>;
+    "0. Esci" ==>;
     choice <==;
     return choice
   end
@@ -63,37 +63,32 @@ end
 
 function main(): nil
   
-  while 
-    keep == 1
-  do
-    local
-      choice: int = showMenu();
-
-      if 
-        res == 1
-      then
-        sum() ==>
-      end
-
-      if 
-        res == 2
-      then
-        mul() ==>
-      end
-
-      if 
-        res == 3
-      then
-        div() ==>
-      end
-
-      if 
-        res == 4
-      then
-        square() ==>
-      end
-
+  while choice != 0 do
+    choice: int = showMenu();
+    if 
+      res == 1
+    then
+      sum() ==>
     end
+
+    if 
+      res == 2
+    then
+      mul() ==>
+    end
+
+    if 
+      res == 3
+    then
+      div() ==>
+    end
+
+    if 
+      res == 4
+    then
+      square() ==>
+    end
+
   end
 
 end
